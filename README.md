@@ -56,3 +56,6 @@ User should see a chart of the upcoming events sorted by cities.
 &nbsp;&nbsp;&nbsp;&nbsp;● **Given** the main page is open;  
 &nbsp;&nbsp;&nbsp;&nbsp;● **When** the user wants to see the upcoming events sorted by cities;  
 &nbsp;&nbsp;&nbsp;&nbsp;● **Then** the user should see a chart with the upcoming events in each city.  
+
+### Serverless functions:
+Meet will use serverless functions to improve data processing and scalability. It will make the app cost-effective and scalable. I saves time and money to implement and manage a own server infrastructore. Use cases for serverless functions are the processing for the data of the events, that a user selects and wants to be filtered or the generation of charts for the app. 
