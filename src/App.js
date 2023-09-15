@@ -29,9 +29,12 @@ function App() {
 
   return (
     <div className="App">
-      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
-      <EventList events={events} />
+
+      <div className="test">
+        <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+        <EventList events={events} />
+      </div>
     </div>
   );
 }

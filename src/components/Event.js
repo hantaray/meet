@@ -7,8 +7,19 @@ const Event = ({ event }) => {
   return (
     <li className="event">
       <h2 className="summary">{event.summary}</h2>
-      <p className="created">{event.created}</p>
       <p className="location">{event.location}</p>
+      <p className="created">{event.created}</p>
+      {showDetails ? (
+        <div className="details">
+          <div className="details-header">
+            <h4>Event Details</h4>
+          </div>
+          <div className="details-text">
+            <p><strong>Description:</strong> {event.description}</p>
+            <p><strong>Status:</strong> {event.status}</p>
+          </div>
+        </div>
+      ) : null}
       <button
         className="details-btn"
         onClick={() => {
@@ -17,13 +28,6 @@ const Event = ({ event }) => {
       >
         {showDetails ? 'Hide details' : 'Show details'}
       </button>
-      {showDetails ? (
-        <div className="details">
-          <h4>Event Details</h4>
-          <p>Description: {event.description}</p>
-          <p>Event status: {event.status}</p>
-        </div>
-      ) : null}
     </li>
   );
 }
