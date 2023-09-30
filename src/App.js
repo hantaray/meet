@@ -29,10 +29,14 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Show events in your city</h1>
+      <label>Enter/select city:</label>
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
 
       <div className="test">
+        <label>Enter/select visible events:</label>
         <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+        <label>(click on details to show/hide event details)</label>
         <EventList events={events} />
       </div>
     </div>
