@@ -97,3 +97,11 @@ input[type="number"] {
   cursor: pointer;
   background-color: lightgreen;
 }
+
+.alerts-container {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
+}
