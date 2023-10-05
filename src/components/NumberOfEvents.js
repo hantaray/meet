@@ -4,13 +4,13 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
     setCurrentNOE(value);
 
     if (isNaN(value)) {
-      // setErrorAlert('value is not a number');
+      setErrorAlert('Value is not a number');
     } else if (value > 50) {
-      // setErrorAlert('maximum value is 50');
+      setErrorAlert('Maximum value is 50');
     } else if (value <= 0) {
-      // setErrorAlert('minimum value is 1');
+      setErrorAlert('Minimum value is 1');
     } else {
-      // setErrorAlert('');
+      setErrorAlert('');
       setCurrentNOE(value);
     }
   };
