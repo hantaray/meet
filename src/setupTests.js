@@ -17,3 +17,21 @@ console.error = (...args) => {
 }
 
 jest.setTimeout(30000);
+
+// fix react-resize-detector-bug (https://github.com/maslianok/react-resize-detector/issues/145#issuecomment-953569721)
+const { ResizeObserver } = window;
+
+beforeEach(() => {
+  //@ts-ignore
+  delete window.ResizeObserver;
+  window.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+  }));
+});
+
+afterEach(() => {
+  window.ResizeObserver = ResizeObserver;
+  jest.restoreAllMocks();
+});
