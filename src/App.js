@@ -58,7 +58,9 @@ function App() {
           setCurrentNOE={setCurrentNOE}
           setErrorAlert={setErrorAlert}
         />
-        <CityEventsChart allLocations={allLocations} events={events} />
+        <div className='charts-container'>
+          <CityEventsChart allLocations={allLocations} events={events} />
+        </div>
         <label>(click on details to show/hide event details)</label>
         <EventList events={events} />
       </div>
