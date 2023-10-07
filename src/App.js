@@ -7,6 +7,7 @@ import NumberOfEvents from './components/NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import { CityEventsChart } from './components/CityEventsChart';
+import { EventGenresChart } from './components/EventGenresChart';
 
 import './App.css';
 
@@ -59,6 +60,7 @@ function App() {
           setErrorAlert={setErrorAlert}
         />
         <div className='charts-container'>
+          <EventGenresChart events={events} />
           <CityEventsChart allLocations={allLocations} events={events} />
         </div>
         <label>(click on details to show/hide event details)</label>
