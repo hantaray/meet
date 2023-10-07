@@ -16,6 +16,7 @@ function App() {
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
+  const [warningAlert, setWarningAlert] = useState("");
 
   const fetchData = async () => {
     const allEvents = await getEvents();
@@ -27,10 +28,10 @@ function App() {
   }
 
   useEffect(() => {
-    if (navigator.onLine) {
-      // set the warning alert message to an empty string ""
+    if (!navigator.onLine) {
+      setWarningAlert("You seem to be offline. Events are loaded from cache.");
     } else {
-      // set the warning alert message to a non-empty string
+      setWarningAlert("");
     }
     fetchData();
   }, [currentCity, currentNOE]);
@@ -41,6 +42,8 @@ function App() {
       <label>Enter/select city:</label>
       <div className="alerts-container">
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
       <CitySearch
         allLocations={allLocations}
@@ -48,11 +51,8 @@ function App() {
         setInfoAlert={setInfoAlert}
       />
 
-      <div className="test">
+      <div>
         <label>Enter/select visible events:</label>
-        <div className="alerts-container">
-          {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
-        </div>
         <NumberOfEvents
           setCurrentNOE={setCurrentNOE}
           setErrorAlert={setErrorAlert}
