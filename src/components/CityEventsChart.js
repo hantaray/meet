@@ -32,7 +32,7 @@ const CityEventsChart = ({ allLocations, events }) => {
         margin={{
           top: 20,
           right: 20,
-          bottom: 120,
+          bottom: 100,
           left: -30,
         }}
       >
